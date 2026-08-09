@@ -22,8 +22,8 @@ export function generatePdfReport(
 
   doc.setTextColor(255, 255, 255);
   doc.setFont("helvetica", "bold");
-  doc.setFontSize(18);
-  doc.text("SCIENCE WORD BATTLE - MATCH SCORECARD", 14, 13);
+  doc.setFontSize(16);
+  doc.text("EduTN43 SCIENCE WORD BATTLE - MATCH SCORECARD", 14, 13);
 
   doc.setFontSize(10);
   doc.setFont("helvetica", "normal");

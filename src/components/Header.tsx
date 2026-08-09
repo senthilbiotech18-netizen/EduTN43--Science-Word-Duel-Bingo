@@ -1,7 +1,8 @@
 import React from "react";
-import { Atom, Volume2, VolumeX, RefreshCw, Award, BookOpen, Key, ShieldCheck, Zap } from "lucide-react";
+import { Volume2, VolumeX, RefreshCw, Award, BookOpen, Key, ShieldCheck, Zap } from "lucide-react";
 import { GameMode } from "../types";
 import { InstallPwaButton } from "./InstallPwaButton";
+import { EduTN43Logo } from "./EduTN43Logo";
 
 interface HeaderProps {
   topicName: string;
@@ -49,13 +50,14 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Brand & Topic */}
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-md shadow-blue-500/20">
-            <Atom className="w-6 h-6 animate-spin-slow" />
-          </div>
+          <EduTN43Logo size="md" variant="icon" />
           <div>
             <div className="flex items-center gap-2 flex-wrap">
-              <h1 className="text-lg font-black text-slate-900 tracking-tight">
-                Science Word Battle
+              <h1 className="text-lg sm:text-xl font-black text-slate-900 tracking-tight flex items-center gap-1.5 flex-wrap">
+                <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-600 bg-clip-text text-transparent font-black">
+                  EduTN43
+                </span>
+                <span className="text-slate-900">Science Word Battle</span>
               </h1>
               <span className="px-2.5 py-0.5 text-xs font-bold rounded-full bg-blue-100 text-blue-800 border border-blue-200">
                 {isEndless

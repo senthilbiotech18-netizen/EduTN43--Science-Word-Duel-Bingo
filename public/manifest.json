@@ -1,7 +1,7 @@
 {
-  "name": "Science Word Duel & Bingo",
-  "short_name": "Science Word",
-  "description": "Interactive turn-based science and biology word battle game powered by AI",
+  "name": "EduTN43 Science Word Battle",
+  "short_name": "EduTN43 Science",
+  "description": "EduTN43 interactive turn-based science and biology word battle game powered by AI",
   "start_url": "/",
   "id": "/",
   "display": "standalone",

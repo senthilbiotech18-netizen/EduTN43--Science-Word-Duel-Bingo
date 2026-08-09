@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { PRESET_TOPICS } from "../data/topics";
 import { Topic, GameMode } from "../types";
+import { EduTN43Logo } from "./EduTN43Logo";
 import {
   Dna,
   Binary,
@@ -68,15 +69,18 @@ export const TopicSelector: React.FC<TopicSelectorProps> = ({
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       {/* Title Hero */}
-      <div className="text-center mb-8">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 border border-blue-200 text-blue-800 text-xs font-bold mb-3">
-          <Sparkles className="w-3.5 h-3.5 text-blue-600" /> Turn-Based AI Science & Biology Word Battle
+      <div className="text-center mb-8 flex flex-col items-center">
+        <div className="mb-4">
+          <EduTN43Logo size="lg" variant="full" showTagline />
+        </div>
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-100 border border-blue-200 text-blue-900 text-xs font-bold mb-3 shadow-xs">
+          <Sparkles className="w-3.5 h-3.5 text-blue-600" /> EduTN43 Science & Biology Learning Tech
         </div>
         <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-          Science Word Duel & Bingo
+          <span className="text-blue-600 font-black mr-2">EduTN43</span>Science Word Battle & Bingo
         </h2>
         <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto mt-2">
-          Challenge the AI word-for-word on any science topic! Type one word, AI types one word. Track total scores, claim Bingo tiles, and watch words typed letter-by-letter.
+          Challenge the AI word-for-word on any science topic! Type one word, AI types one word. Track total scores, claim Bingo tiles, and explore comprehensive biology dictionaries.
         </p>
       </div>
 

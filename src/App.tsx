@@ -652,6 +652,20 @@ export default function App() {
           setGameStep("setup");
         }}
       />
+
+      {/* Global Brand Footer */}
+      <footer className="mt-12 py-6 border-t border-slate-200/80 bg-white/50 backdrop-blur-xs text-center text-xs text-slate-500">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <span className="font-extrabold text-slate-800">EduTN43</span>
+            <span>•</span>
+            <span>Science & Biology Learning Technology</span>
+          </div>
+          <div className="text-slate-400">
+            © {new Date().getFullYear()} EduTN43. All rights reserved.
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

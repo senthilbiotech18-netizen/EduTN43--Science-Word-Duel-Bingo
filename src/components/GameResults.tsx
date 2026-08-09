@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { GameStats, WordEntry } from "../types";
 import { generatePdfReport } from "../utils/pdfGenerator";
 import { getEtymologyFallback } from "../utils/etymologyHelper";
+import { EduTN43Logo } from "./EduTN43Logo";
 import {
   Trophy,
   Award,
@@ -47,7 +48,7 @@ export const GameResults: React.FC<GameResultsProps> = ({
 
   // Copy vocabulary report to clipboard
   const handleCopySummary = () => {
-    const summaryText = `Science Word Battle Summary (${topic})
+    const summaryText = `EduTN43 Science Word Battle Summary (${topic})
 -----------------------------------------
 Final Score: Student (${stats.studentScore} pts) vs AI (${stats.aiScore} pts)
 Words Typed: Student (${stats.studentWordCount} words) vs AI (${stats.aiWordCount} words)
@@ -70,9 +71,12 @@ ${wordHistory
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       {/* Winner Header Banner */}
-      <div className="text-center mb-8 bg-white border border-blue-100 rounded-3xl p-8 shadow-sm relative overflow-hidden">
+      <div className="text-center mb-8 bg-white border border-blue-100 rounded-3xl p-8 shadow-sm relative overflow-hidden flex flex-col items-center">
+        <div className="mb-4">
+          <EduTN43Logo size="md" variant="full" />
+        </div>
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 text-blue-800 text-xs font-bold mb-4">
-          <Trophy className="w-4 h-4 text-blue-600" /> Match Completed: {topic}
+          <Trophy className="w-4 h-4 text-blue-600" /> EduTN43 Match Scorecard: {topic}
         </div>
 
         <h2 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight">

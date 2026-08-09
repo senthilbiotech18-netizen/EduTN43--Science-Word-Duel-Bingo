@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 160" width="100%" height="100%">
+  <defs>
+    <linearGradient id="eduGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#2563eb" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Logo Emblem Badge -->
+  <g transform="translate(10, 10)" filter="url(#glow)">
+    <rect x="0" y="0" width="140" height="140" rx="36" fill="url(#eduGrad)"/>
+    
+    <!-- Atomic Orbits behind badge -->
+    <g stroke="#ffffff" stroke-width="4" fill="none" opacity="0.6" transform="translate(70, 70)">
+      <ellipse rx="46" ry="18" transform="rotate(30)"/>
+      <ellipse rx="46" ry="18" transform="rotate(-30)"/>
+    </g>
+
+    <!-- Center Graduation Cap & Crest -->
+    <path d="M70 38 L108 58 L70 78 L32 58 Z" fill="#ffffff"/>
+    <path d="M44 67 V88 C44 96, 96 96, 96 88 V67" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M102 61 V82" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="102" cy="85" r="4" fill="#38bdf8"/>
+  </g>
+
+  <!-- Typography: EduTN43 -->
+  <g transform="translate(170, 95)">
+    <!-- Edu -->
+    <text x="0" y="0" font-family="System-UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="76" fill="#0f172a" letter-spacing="-2">Edu</text>
+    
+    <!-- TN43 Badge Box -->
+    <g transform="translate(145, -68)">
+      <rect x="0" y="0" width="175" height="78" rx="20" fill="url(#accentGrad)"/>
+      <text x="87.5" y="55" font-family="System-UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="52" fill="#ffffff" text-anchor="middle" letter-spacing="0">TN43</text>
+    </g>
+  </g>
+
+  <!-- Subtitle Tagline -->
+  <text x="172" y="132" font-family="System-UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="20" fill="#64748b" letter-spacing="1">LEARNING & SCIENCE TECH</text>
+</svg>
