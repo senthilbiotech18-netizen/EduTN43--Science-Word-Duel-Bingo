@@ -1,0 +1,6 @@
+{
+  "name": "Science Word Duel & Bingo",
+  "description": "Interactive turn-based science and biology word challenge where students face off against AI, claim bingo tiles, and analyze vocabulary performance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,90 @@
+import { Topic, BingoTile } from "../types";
+
+export const PRESET_TOPICS: Topic[] = [
+  {
+    id: "cell-biology",
+    name: "Cell Biology & Organelles",
+    iconName: "Dna",
+    description: "Structures, organelles, membrane transport, and cellular energy.",
+    category: "Biology",
+    sampleWords: ["Mitochondria", "Ribosome", "Chloroplast", "Endoplasmic", "Cytoplasm", "Lysosome", "Vacuole", "Nucleolus"],
+  },
+  {
+    id: "genetics-dna",
+    name: "Genetics & DNA Biotechnology",
+    iconName: "Binary",
+    description: "Genes, chromosomes, inheritance patterns, RNA transcription, and CRISPR.",
+    category: "Biology",
+    sampleWords: ["Nucleotide", "Allele", "Chromosome", "Transcription", "Polymerase", "Phenotype", "Mutation", "Heterozygous"],
+  },
+  {
+    id: "photosynthesis-ecology",
+    name: "Photosynthesis & Ecology",
+    iconName: "Trees",
+    description: "Light reactions, Calvin cycle, food webs, ecosystems, and biogeochemical cycles.",
+    category: "Biology / Environmental",
+    sampleWords: ["Chlorophyll", "Thylakoid", "Biosphere", "Biodiversity", "Mutualism", "Transpiration", "Autotroph", "Ecosystem"],
+  },
+  {
+    id: "anatomy-physiology",
+    name: "Human Anatomy & Systems",
+    iconName: "Activity",
+    description: "Circulatory, nervous, endocrine, respiratory, and musculoskeletal systems.",
+    category: "Human Biology",
+    sampleWords: ["Neuron", "Hemoglobin", "Synapse", "Homeostasis", "Alveoli", "Peristalsis", "Hormone", "Capillary"],
+  },
+  {
+    id: "chemistry-periodic",
+    name: "Chemistry & Periodic Elements",
+    iconName: "FlaskConical",
+    description: "Atoms, chemical bonding, reactions, periodic table, and organic compounds.",
+    category: "Chemistry",
+    sampleWords: ["Covalent", "Electronegativity", "Enthalpy", "Polymer", "Oxidation", "Stoichiometry", "Catalyst", "Isotope"],
+  },
+  {
+    id: "physics-mechanics",
+    name: "Physics, Forces & Energy",
+    iconName: "Zap",
+    description: "Kinematics, forces, thermodynamics, optics, electromagnetism, and waves.",
+    category: "Physics",
+    sampleWords: ["Momentum", "Refraction", "Velocity", "Entropy", "Electromagnet", "Kinetic", "Acceleration", "Wavelength"],
+  },
+  {
+    id: "astronomy-space",
+    name: "Astronomy & Astrophysics",
+    iconName: "Sparkles",
+    description: "Stars, galaxies, planetary science, cosmology, gravity, and nebulae.",
+    category: "Space Science",
+    sampleWords: ["Supernova", "Exoplanet", "Gravitational", "Nebula", "Spectroscopy", "Parallax", "Singularity", "Luminosity"],
+  }
+];
+
+export const DEFAULT_BINGO_TILES: Record<string, BingoTile[]> = {
+  "cell-biology": [
+    { id: "cb-1", label: "Energy Plant", targetTermOrCategory: "Mitochondria", description: "Organelle producing ATP", claimedBy: null },
+    { id: "cb-2", label: "Protein Maker", targetTermOrCategory: "Ribosome", description: "Translates mRNA to protein", claimedBy: null },
+    { id: "cb-3", label: "Control Center", targetTermOrCategory: "Nucleus", description: "Contains cell DNA", claimedBy: null },
+    { id: "cb-4", label: "Waste Disposal", targetTermOrCategory: "Lysosome", description: "Contains digestive enzymes", claimedBy: null },
+    { id: "cb-5", label: "Sunlight Absorber", targetTermOrCategory: "Chloroplast", description: "Site of photosynthesis", claimedBy: null },
+    { id: "cb-6", label: "Transport Net", targetTermOrCategory: "Endoplasmic", description: "Rough or Smooth ER", claimedBy: null },
+    { id: "cb-7", label: "Cell Gatekeeper", targetTermOrCategory: "Membrane", description: "Phospholipid bilayer", claimedBy: null },
+    { id: "cb-8", label: "Cell Fluid", targetTermOrCategory: "Cytoplasm", description: "Jellylike interior fluid", claimedBy: null },
+    { id: "cb-9", label: "Storage Sack", targetTermOrCategory: "Vacuole", description: "Stores water and nutrients", claimedBy: null },
+    { id: "cb-10", label: "Packaging Center", targetTermOrCategory: "Golgi", description: "Modifies & ships proteins", claimedBy: null },
+    { id: "cb-11", label: "Structural Frame", targetTermOrCategory: "Cytoskeleton", description: "Microtubules & filaments", claimedBy: null },
+    { id: "cb-12", label: "RNA Factory", targetTermOrCategory: "Nucleolus", description: "Assembles ribosomes", claimedBy: null },
+    { id: "cb-13", label: "Programmed Death", targetTermOrCategory: "Apoptosis", description: "Controlled cell suicide", claimedBy: null },
+    { id: "cb-14", label: "Diffusion Passive", targetTermOrCategory: "Osmosis", description: "Water movement across membrane", claimedBy: null },
+    { id: "cb-15", label: "Energy Currency", targetTermOrCategory: "ATP", description: "Adenosine Triphosphate", claimedBy: null },
+    { id: "cb-16", label: "Cell Division", targetTermOrCategory: "Mitosis", description: "Somatic nuclear division", claimedBy: null },
+    { id: "cb-17", label: "Gamete Division", targetTermOrCategory: "Meiosis", description: "Reduction cell division", claimedBy: null },
+    { id: "cb-18", label: "Cell Eating", targetTermOrCategory: "Phagocytosis", description: "Engulfing solid particles", claimedBy: null },
+    { id: "cb-19", label: "Cell Drinking", targetTermOrCategory: "Pinocytosis", description: "Engulfing extracellular fluid", claimedBy: null },
+    { id: "cb-20", label: "Enzyme Biological", targetTermOrCategory: "Catalyst", description: "Speeds up chemical reaction", claimedBy: null },
+    { id: "cb-21", label: "Substrate Active", targetTermOrCategory: "Active Site", description: "Enzyme binding pocket", claimedBy: null },
+    { id: "cb-22", label: "Rigid Outer Layer", targetTermOrCategory: "Cell Wall", description: "Found in plants & fungi", claimedBy: null },
+    { id: "cb-23", label: "Chromatin Strand", targetTermOrCategory: "Chromosome", description: "Condensed genetic material", claimedBy: null },
+    { id: "cb-24", label: "Prokaryotic Tail", targetTermOrCategory: "Flagellum", description: "Whip-like locomotion structure", claimedBy: null },
+    { id: "cb-25", label: "Intercellular Gap", targetTermOrCategory: "Plasmodesmata", description: "Channels between plant cells", claimedBy: null },
+  ]
+};
