@@ -183,6 +183,57 @@ export const SCIENCE_DICTIONARIES: Record<string, OfflineWordInfo[]> = {
     { word: "PCR", definition: "Polymerase Chain Reaction; technique amplifying specific DNA sequences exponentially.", etymology: "Acronym for Polymerase Chain Reaction.", funFact: "Kary Mullis invented PCR in 1983 and won the Nobel Prize in Chemistry.", score: 20 },
     { word: "Gel Electrophoresis", definition: "Laboratory technique separating DNA, RNA, or protein fragments by size using electric current.", etymology: "From German 'electro-' + Greek 'phoresis' (carrying).", funFact: "Smaller DNA fragments migrate faster through agarose gel pores toward the positive pole.", score: 30 },
     { word: "Restriction Enzyme", definition: "Bacterial enzyme cutting DNA double strands at specific recognition nucleotide sequences.", etymology: "Descriptive enzyme name restricting viral DNA infection.", funFact: "Restriction enzymes function as molecular scissors for recombinant DNA technology.", score: 20 }
+  ],
+  "reproduction-plants": [
+    { word: "Pollination", definition: "Transfer of pollen grains from anther to stigma in flowering plants.", etymology: "From Latin 'pollen' (fine flour or dust).", funFact: "Wind, bees, butterflies, birds, and bats are crucial plant pollinators!", score: 10 },
+    { word: "Pollen", definition: "Microscopic grains containing male gametophytes of seed plants.", etymology: "From Latin 'pollen' (fine powder or flour).", funFact: "Fossilized pollen grains can survive intact for millions of years!", score: 10 },
+    { word: "Stamen", definition: "Male reproductive organ of a flower consisting of anther and filament.", etymology: "From Latin 'stamen' (warp thread or fiber).", funFact: "The number of stamens varies widely across different plant families.", score: 10 },
+    { word: "Pistil", definition: "Female reproductive organ of a flower comprising stigma, style, and ovary.", etymology: "From Latin 'pistillum' (pestle), describing its shape.", funFact: "A pistil can consist of one or multiple fused carpels.", score: 10 },
+    { word: "Anther", definition: "Pollen-bearing structure situated at the tip of the stamen filament.", etymology: "From Greek 'antheros' (flowering or blooming).", funFact: "Anthers split open when pollen matures to release grains into the air or onto pollinators.", score: 20 },
+    { word: "Stigma", definition: "Sticky receptive surface at the top of the pistil capturing pollen grains.", etymology: "From Greek 'stigma' (mark, spot, or puncture).", funFact: "The sticky surface secretes sugary fluids to nurture germinating pollen tubes.", score: 20 },
+    { word: "Ovule", definition: "Structure inside plant ovaries containing the egg cell that develops into a seed.", etymology: "From Latin 'ovulum' (little egg).", funFact: "After fertilization, the ovule matures into a seed with a dormant plant embryo.", score: 20 },
+    { word: "Ovary", definition: "Enlarged basal portion of the pistil containing ovules that matures into a fruit.", etymology: "From Latin 'ovarium' (egg receptacle).", funFact: "True botanical fruits (like tomatoes, apples, and pumpkins) develop from fertilized plant ovaries!", score: 10 },
+    { word: "Germination", definition: "Process whereby a plant seed sprouts and begins embryonic seedling growth.", etymology: "From Latin 'germinare' (to sprout or bud).", funFact: "Water absorption (imbibition) triggers enzymes that kickstart seed germination.", score: 20 },
+    { word: "Gametophyte", definition: "Haploid multicellular stage in plant alternation of generations producing gametes.", etymology: "From Greek 'gamete' (spouse) + 'phyton' (plant).", funFact: "In mosses, the green leafy carpet is the dominant gametophyte stage!", score: 30 },
+    { word: "Sporophyte", definition: "Diploid multicellular plant stage producing haploid spores via meiosis.", etymology: "From Greek 'spora' (seed/spore) + 'phyton' (plant).", funFact: "In flowering trees and plants, the visible plant is the dominant sporophyte stage.", score: 30 },
+    { word: "Endosperm", definition: "Nutrient-rich tissue formed inside seeds following double fertilization to nourish the embryo.", etymology: "From Greek 'endon' (within) + 'sperma' (seed).", funFact: "Popcorn pops when steam builds up inside the starchy endosperm layer!", score: 20 },
+    { word: "Double Fertilization", definition: "Unique angiosperm mechanism where one sperm fertilizes the egg and another forms endosperm.", etymology: "Descriptive botanical term for dual fertilization.", funFact: "Discovered by Sergei Nawaschin in 1898 in lilies!", score: 30 },
+    { word: "Angiosperm", definition: "Vascular plant producing flowers and seeds enclosed within a protective fruit ovary.", etymology: "From Greek 'angeion' (receptacle/vessel) + 'sperma' (seed).", funFact: "Angiosperms represent over 80% of all living plant species on Earth!", score: 20 },
+    { word: "Gymnosperm", definition: "Vascular plant producing naked unenclosed seeds on cones (e.g., pines, firs).", etymology: "From Greek 'gymnos' (naked) + 'sperma' (seed).", funFact: "Conifers and ginkgo trees are classic examples of ancient gymnosperms.", score: 20 },
+    { word: "Carpel", definition: "Female reproductive unit of a flower enclosing the ovule, style, and stigma.", etymology: "From Greek 'karpos' (fruit).", funFact: "A flower can have a single carpel or a cluster of fused carpels.", score: 20 },
+    { word: "Filament", definition: "Slender stalk supporting the pollen-bearing anther in a stamen.", etymology: "From Latin 'filamentum' (thread).", funFact: "Filament length positions the anther to optimize pollen transfer.", score: 10 },
+    { word: "Sepal", definition: "Outer green leaf-like structure enclosing and protecting an unopened flower bud.", etymology: "From Greek 'skepe' (covering or shelter).", funFact: "Collectively, all sepals of a flower form the calyx.", score: 10 },
+    { word: "Petal", definition: "Conspicuous, brightly colored floral segment attracting animal pollinators.", etymology: "From Greek 'petalon' (leaf or outspread plate).", funFact: "Petal color patterns often include ultraviolet markers visible to bees!", score: 10 },
+    { word: "Sporangium", definition: "Enclosure or capsule in which plant spores are produced.", etymology: "From Greek 'spora' (spore) + 'angeion' (vessel).", funFact: "Fern fronds bear clusters of sporangia called sori on their undersides.", score: 30 },
+    { word: "Cotyledon", definition: "Embryonic seed leaf present in seed-bearing plants.", etymology: "From Greek 'kotyle' (cup-shaped hollow).", funFact: "Flowering plants are divided into monocots (1 cotyledon) and dicots (2 cotyledons)!", score: 20 },
+    { word: "Seed Coat", definition: "Protective outer covering protecting the dormant plant embryo from drying.", etymology: "From Old English 'saed' + 'cote'.", funFact: "Also known as the testa, it can withstand harsh environmental conditions for decades.", score: 10 },
+    { word: "Radicle", definition: "Embryonic root of a plant germinated from a seed.", etymology: "From Latin 'radicula' (little root).", funFact: "The radicle is the very first structure to emerge from a germinating seed!", score: 20 },
+    { word: "Microspore", definition: "Land plant spore that develops into a male gametophyte (pollen grain).", etymology: "From Greek 'mikros' (small) + 'spora' (seed).", funFact: "Microspores are produced inside the microsporangia of anthers.", score: 30 },
+    { word: "Megaspore", definition: "Spore that develops into a female gametophyte inside the plant ovule.", etymology: "From Greek 'megas' (large) + 'spora' (seed).", funFact: "One functional megaspore survives to form the 7-celled embryo sac.", score: 30 }
+  ],
+  "chemistry-periodic": [
+    { word: "Atom", definition: "Basic unit of a chemical element consisting of a nucleus surrounded by electrons.", etymology: "From Greek 'atomos' (indivisible).", funFact: "Atoms are 99.9999999% empty space!", score: 10 },
+    { word: "Covalent Bond", definition: "Chemical bond formed by the sharing of electron pairs between atoms.", etymology: "From Latin 'co-' (together) + 'valere' (to be strong).", funFact: "Water molecules (H2O) are held together by polar covalent bonds.", score: 20 },
+    { word: "Ionic Bond", definition: "Electrostatic attraction between oppositely charged ions.", etymology: "From Greek 'ion' (going) + 'bond'.", funFact: "Table salt (NaCl) is formed through ionic bonding.", score: 20 },
+    { word: "Electronegativity", definition: "Tendency of an atom to attract shared electrons in a chemical bond.", etymology: "From Latin 'electro-' + 'negativus'.", funFact: "Fluorine is the most electronegative element on the periodic table!", score: 30 },
+    { word: "Oxidation", definition: "Loss of electrons during a chemical reaction by a molecule, atom, or ion.", etymology: "From French 'oxygene' (acid former).", funFact: "Rusting iron is a classic example of slow oxidation.", score: 20 },
+    { word: "Stoichiometry", definition: "Calculation of reactants and products in chemical reactions.", etymology: "From Greek 'stoicheion' (element) + 'metron' (measure).", funFact: "Stoichiometry relies on the Law of Conservation of Mass.", score: 30 }
+  ],
+  "physics-mechanics": [
+    { word: "Gravity", definition: "Universal force of attraction acting between all matter possessing mass.", etymology: "From Latin 'gravitas' (weight or heaviness).", funFact: "Gravity keeps Earth orbiting the Sun at over 67,000 mph!", score: 10 },
+    { word: "Inertia", definition: "Resistance of any physical object to any change in its velocity.", etymology: "From Latin 'iners' (idle or sluggish).", funFact: "Newton's First Law of Motion is also known as the Law of Inertia.", score: 20 },
+    { word: "Momentum", definition: "Quantity of motion of a moving body, measured as mass multiplied by velocity.", etymology: "From Latin 'momentum' (movement or impulse).", funFact: "In a closed system, total momentum is always conserved!", score: 20 },
+    { word: "Kinetic Energy", definition: "Energy possessed by an object due to its motion.", etymology: "From Greek 'kinetikos' (moving).", funFact: "Doubling an object's speed quadruples its kinetic energy!", score: 20 }
+  ],
+  "astronomy-space": [
+    { word: "Supernova", definition: "Powerful and luminous stellar explosion marking the death of a massive star.", etymology: "From Latin 'super' (above) + 'nova' (new star).", funFact: "A supernova can briefly outshine an entire galaxy of billions of stars!", score: 20 },
+    { word: "Exoplanet", definition: "Planet located outside our solar system orbiting another star.", etymology: "From Greek 'exo' (outside) + 'planet'.", funFact: "Astronomers have discovered over 5,000 confirmed exoplanets!", score: 20 },
+    { word: "Nebula", definition: "Giant interstellar cloud of dust, hydrogen, helium, and other ionized gases.", etymology: "From Latin 'nebula' (mist or cloud).", funFact: "Nebulae are stellar nurseries where new stars are born.", score: 10 }
+  ],
+  "geology-earth": [
+    { word: "Plate Tectonics", definition: "Scientific theory describing the large-scale motion of Earth's lithospheric plates.", etymology: "From Greek 'tekton' (builder/mason).", funFact: "Tectonic plates move at about the same rate your fingernails grow!", score: 20 },
+    { word: "Magma", definition: "Molten or semi-molten natural material located beneath Earth's surface.", etymology: "From Greek 'magma' (thick ointment or dough).", funFact: "When magma reaches Earth's surface through a volcano, it is called lava.", score: 10 },
+    { word: "Lithosphere", definition: "Rigid, outermost rocky shell of Earth comprising the crust and upper mantle.", etymology: "From Greek 'lithos' (stone) + 'sphaira' (globe).", funFact: "Earth's lithosphere is broken into about 15 major tectonic plates.", score: 20 }
   ]
 };
 
@@ -224,9 +275,82 @@ export function getAllBiologyWords(): OfflineWordInfo[] {
 
 export function getOfflineWordList(topicKey?: string): OfflineWordInfo[] {
   if (!topicKey) return getAllBiologyWords();
-  const normalized = topicKey.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const lower = topicKey.toLowerCase();
+  const normalized = lower.replace(/[^a-z0-9]/g, "");
 
-  // Check direct or partial key match in SCIENCE_DICTIONARIES
+  // 1. Plant Reproduction & Botany keywords
+  if (
+    normalized.includes("reproduc") ||
+    normalized.includes("plant") ||
+    normalized.includes("flower") ||
+    normalized.includes("pollen") ||
+    normalized.includes("seed") ||
+    normalized.includes("botany") ||
+    normalized.includes("angiosperm") ||
+    normalized.includes("fertiliz")
+  ) {
+    if (SCIENCE_DICTIONARIES["reproduction-plants"]) {
+      return SCIENCE_DICTIONARIES["reproduction-plants"];
+    }
+  }
+
+  // 2. Chemistry keywords
+  if (
+    normalized.includes("chem") ||
+    normalized.includes("element") ||
+    normalized.includes("atom") ||
+    normalized.includes("period") ||
+    normalized.includes("reaction") ||
+    normalized.includes("bond")
+  ) {
+    if (SCIENCE_DICTIONARIES["chemistry-periodic"]) {
+      return SCIENCE_DICTIONARIES["chemistry-periodic"];
+    }
+  }
+
+  // 3. Physics keywords
+  if (
+    normalized.includes("physic") ||
+    normalized.includes("force") ||
+    normalized.includes("motion") ||
+    normalized.includes("gravit") ||
+    normalized.includes("energy") ||
+    normalized.includes("quantum")
+  ) {
+    if (SCIENCE_DICTIONARIES["physics-mechanics"]) {
+      return SCIENCE_DICTIONARIES["physics-mechanics"];
+    }
+  }
+
+  // 4. Space / Astronomy keywords
+  if (
+    normalized.includes("space") ||
+    normalized.includes("astron") ||
+    normalized.includes("star") ||
+    normalized.includes("planet") ||
+    normalized.includes("galaxy") ||
+    normalized.includes("cosmo")
+  ) {
+    if (SCIENCE_DICTIONARIES["astronomy-space"]) {
+      return SCIENCE_DICTIONARIES["astronomy-space"];
+    }
+  }
+
+  // 5. Geology / Earth keywords
+  if (
+    normalized.includes("earth") ||
+    normalized.includes("geolog") ||
+    normalized.includes("rock") ||
+    normalized.includes("tecton") ||
+    normalized.includes("fossil") ||
+    normalized.includes("mineral")
+  ) {
+    if (SCIENCE_DICTIONARIES["geology-earth"]) {
+      return SCIENCE_DICTIONARIES["geology-earth"];
+    }
+  }
+
+  // 6. Check direct or partial key match in SCIENCE_DICTIONARIES
   for (const [key, list] of Object.entries(SCIENCE_DICTIONARIES)) {
     const cleanKey = key.replace(/[^a-z0-9]/g, "");
     if (normalized.includes(cleanKey) || cleanKey.includes(normalized)) {
@@ -234,11 +358,28 @@ export function getOfflineWordList(topicKey?: string): OfflineWordInfo[] {
     }
   }
 
-  // Check matching individual keyword parts
+  // 7. Check matching individual keyword parts
   for (const [key, list] of Object.entries(SCIENCE_DICTIONARIES)) {
     const keyWords = key.split("-");
     if (keyWords.some((kw) => kw.length >= 3 && normalized.includes(kw))) {
       return list;
+    }
+  }
+
+  // 8. Try filtering terms whose word or definition matches words from topic string
+  const topicWords = lower
+    .split(/\s+/)
+    .map((w) => w.replace(/[^a-z0-9]/g, ""))
+    .filter((w) => w.length >= 3 && !["and", "the", "for", "in", "of", "with", "topic", "science"].includes(w));
+
+  if (topicWords.length > 0) {
+    const master = getAllBiologyWords();
+    const matches = master.filter((item) => {
+      const itemText = (item.word + " " + item.definition).toLowerCase();
+      return topicWords.some((tw) => itemText.includes(tw));
+    });
+    if (matches.length >= 5) {
+      return matches;
     }
   }
 

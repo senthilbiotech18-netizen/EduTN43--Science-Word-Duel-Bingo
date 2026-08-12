@@ -64,9 +64,15 @@ app.post("/api/generate-bingo-board", async (req, res) => {
   }
 
   try {
-    const prompt = `Generate 25 scientific concepts, key terms, or sub-categories for a 5x5 Bingo Card on the topic: "${topic}".
-Each item should be a distinct science term or category (1-3 words max, e.g. "Mitochondria", "Photosynthesis", "DNA Polymerase").
-Return a JSON array of 25 items with 'label', 'targetTermOrCategory', and 'description'.`;
+    const prompt = `Generate 25 distinct scientific concepts, key terms, or vocabulary words for a 5x5 Bingo Card for the target topic: "${topic}".
+
+STRICT TOPIC ADHERENCE MANDATE:
+- Every single item MUST be 100% strictly and directly relevant to the target topic "${topic}".
+- IF THE TOPIC IS A CUSTOM OR USER-TYPED TOPIC (such as "${topic}", e.g., "reproduction in plants", "Quantum Mechanics", "Plate Tectonics", "Neuroscience", "Organic Chemistry"), ALL 25 items MUST belong EXCLUSIVELY to that specific topic "${topic}".
+- For example, if the topic is "reproduction in plants" or "Plant Reproduction", ALL 25 items MUST be specific plant reproduction terms (such as "Pollination", "Pollen", "Stamen", "Pistil", "Anther", "Stigma", "Ovule", "Endosperm", "Gametophyte", "Sporophyte", "Double Fertilization", "Germination", "Angiosperm", "Gymnosperm", "Carpel", "Filament", "Sepal", "Petal", "Cotyledon", "Radicle", etc.).
+- ABSOLUTELY DO NOT include generic, off-topic, or random words (like "Neuron", "Nephron", "Mitochondria", "Hypothesis", "Experiment") if they do not belong to "${topic}".
+
+Each item should be a distinct science term or category (1-3 words max). Return a JSON array of 25 items with 'label', 'targetTermOrCategory', and 'description'.`;
 
     const textResult = await generateContentWithFallback(
       prompt,
@@ -133,25 +139,32 @@ app.post("/api/validate-and-respond", async (req, res) => {
       ? bingoTiles.map((t: any) => `${t.id}: ${t.label}`).join("; ")
       : "";
 
-    const prompt = `You are a science and biology educational game master for an online Word Challenge / Word Battle game.
-Topic: "${topic}"
-Student entered: "${normalizedInput}"
-Used words in game so far: [${usedWordsStr}]
+    const prompt = `You are an elite science and biology educational game master for "EduTN43 Science Word Battle".
+TARGET TOPIC: "${topic}"
+
+Student entered word/phrase: "${normalizedInput}"
+Used words in this match so far: [${usedWordsStr}]
 Bingo Card Tiles available: [${tileLabelsList}]
 
-Task:
-1. Validate if the student's entry "${normalizedInput}" is a legitimate, accurate science/biology/educational term related to "${topic}".
-   - Check if it was already used in [${usedWordsStr}]. If already used, mark isValid = false with reason "Already used in this game!".
-   - If not related to "${topic}" or not a real science word, mark isValid = false with helpful feedback.
-   - If valid, assign a score (10 for basic, 20 for intermediate, 30 for advanced terminology), concise definition (1 sentence), AND mandatory etymology / word origin (e.g. "From Greek 'mitos' (thread) + 'chondros' (granule)"), and if it closely matches any Bingo Tile ID from the provided list, return that matchedBingoTileId.
+STRICT TOPIC ADHERENCE MANDATE:
+1. STUDENT WORD VALIDATION:
+   - Validate if "${normalizedInput}" is a real, legitimate scientific term STRICTLY relevant to "${topic}".
+   - If "${normalizedInput}" is completely unrelated to "${topic}" (e.g., typing "Astronomy" when the topic is "Cell Biology", or typing "Computer" when the topic is "Reproduction in Plants"), mark isValid = false with a clear reason explaining why "${normalizedInput}" does not belong to "${topic}".
+   - Check if it was already used in [${usedWordsStr}]. If already used, mark isValid = false with reason "Already used in this match!".
+   - If valid, assign a score (10 for basic, 20 for intermediate, 30 for advanced terminology), concise 1-sentence definition, AND mandatory etymology / word origin (e.g., "From Greek 'pollen' (fine flour)"), plus matchedBingoTileId if applicable.
 
-2. IF the student's entry is valid, generate the AI's counter word turn:
-   - Select a UNIQUE, accurate science word STRICTLY and DIRECTLY related to "${topic}".
-   - ABSOLUTE MANDATE: Do NOT select generic or unrelated terms like "experiment", "hypothesis", or "method" unless the topic is explicitly General Science. For example, if the topic is "Cell Biology & Organelles", the AI MUST select a cell biology or organelle term (such as "Ribosome", "Lysosome", "Chloroplast", "Cytoplasm", "Endoplasmic", "Nucleolus", etc.).
-   - MUST NOT be in [${usedWordsStr}] and MUST NOT be "${normalizedInput}".
-   - Provide the AI word, concise definition (1 sentence), mandatory etymology / word origin (e.g. "From Greek 'bios' (life) + 'logos' (study)"), a fascinating mini fun fact (1 sentence), a score (10-30), and if it matches any Bingo Tile ID, return matchedBingoTileId.
+2. AI COUNTER WORD GENERATION (CRITICAL REQUIREMENT):
+   - ABSOLUTE MANDATE: The AI MUST choose a word or term that is 100% STRICTLY AND DIRECTLY RELATED TO THE TARGET TOPIC "${topic}".
+   - IF THE TOPIC IS A CUSTOM OR USER-TYPED TOPIC (such as "${topic}", e.g., "reproduction in plants", "Quantum Mechanics", "Plate Tectonics", "Neuroscience"), EVERY SINGLE AI WORD GENERATED MUST BELONG EXCLUSIVELY TO THAT TOPIC "${topic}".
+   - DO NOT EVER generate random, off-topic, or generic words (like "Neuron", "Nephron", "Hypothesis", or "Mitochondria") if they do not belong to the chosen topic "${topic}".
+   - EXAMPLES OF STRICT TOPIC ADHERENCE:
+     * If Topic is "Reproduction in Plants" / "reproduction in plants", AI words MUST be plant reproduction terms: "Pollen", "Pollination", "Stamen", "Pistil", "Anther", "Stigma", "Ovule", "Gametophyte", "Sporophyte", "Endosperm", "Germination", "Angiosperm", "Gymnosperm", "Double Fertilization", "Cotyledon", "Radicle", "Carpel", "Filament", "Sepal", "Petal".
+     * If Topic is "Cell Biology & Organelles", AI words MUST be cell biology terms.
+     * If Topic is "Genetics & DNA", AI words MUST be genetics terms.
+   - The AI word MUST NOT be in [${usedWordsStr}] and MUST NOT be "${normalizedInput}".
+   - Provide the AI word, concise 1-sentence definition, mandatory etymology / word origin, fascinating 1-sentence fun fact, score (10-30), and matchedBingoTileId if applicable.
 
-CRITICAL: Both 'etymology' fields MUST be provided for both words. The AI counter word MUST be strictly on topic for "${topic}".
+CRITICAL: Both 'etymology' fields MUST be provided for both words. The AI counter word MUST be 100% strictly on topic for "${topic}".
 
 Return strictly JSON conforming to the schema.`;
 

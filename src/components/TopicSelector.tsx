@@ -158,9 +158,30 @@ export const TopicSelector: React.FC<TopicSelectorProps> = ({
               type="text"
               value={customTopic}
               onChange={(e) => setCustomTopic(e.target.value)}
-              placeholder="e.g. Microbiology, Neuroscience, Organic Chemistry, Quantum Physics..."
+              placeholder="e.g. Reproduction in plants, Neuroscience, Quantum Physics..."
               className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-blue-600 shadow-sm"
             />
+            <div className="mt-2.5 flex flex-wrap gap-1.5 items-center">
+              <span className="text-[11px] text-slate-500 font-medium">Quick Topic Ideas:</span>
+              {[
+                "Reproduction in Plants",
+                "Human Heart & Circulation",
+                "Neuroscience & Brain",
+                "Quantum Physics",
+                "Organic Chemistry",
+                "Plate Tectonics",
+                "Microbiology"
+              ].map((suggestion) => (
+                <button
+                  key={suggestion}
+                  type="button"
+                  onClick={() => setCustomTopic(suggestion)}
+                  className="px-2.5 py-1 text-xs bg-white border border-blue-200 hover:border-blue-500 hover:bg-blue-50 text-blue-700 font-medium rounded-lg transition-colors shadow-2xs"
+                >
+                  + {suggestion}
+                </button>
+              ))}
+            </div>
           </div>
         )}
       </div>
