@@ -170,6 +170,14 @@ export const PRESET_TOPICS: Topic[] = [
     sampleWords: ["Recombinant DNA", "Restriction Enzyme", "Plasmid", "Transgenic", "GMO", "Gene Therapy"],
   },
   {
+    id: "advanced-extension",
+    name: "22. Advanced / University-Level Extension Terms",
+    iconName: "Sparkles",
+    description: "Signal transduction, cell cycle checkpoints, epigenetics, operons, proteomics, and action potentials.",
+    category: "IGCSE Biology",
+    sampleWords: ["Apoptosis", "Epigenetics", "Action Potential", "Operon", "Transcription Factor", "Pluripotency"],
+  },
+  {
     id: "chemistry-periodic",
     name: "Chemistry & Periodic Elements",
     iconName: "FlaskConical",
