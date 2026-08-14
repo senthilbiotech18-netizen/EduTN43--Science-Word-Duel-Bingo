@@ -25,9 +25,9 @@ export function generatePdfReport(
   doc.setFontSize(16);
   doc.text("EduTN43 SCIENCE WORD BATTLE - MATCH SCORECARD", 14, 13);
 
-  doc.setFontSize(10);
+  doc.setFontSize(9);
   doc.setFont("helvetica", "normal");
-  doc.text(`Topic: ${topic} | Mode: ${gameMode.toUpperCase()}`, 14, 19);
+  doc.text(`Topic: ${topic} | Mode: ${gameMode.toUpperCase()} | Fair Scoring: 20 pts/word`, 14, 19);
 
   // Date
   const dateStr = new Date().toLocaleDateString("en-US", {

@@ -95,7 +95,7 @@ ${wordHistory
         <div className="flex items-center justify-center gap-8 mt-6">
           <div className="text-center">
             <div className="text-xs uppercase font-extrabold tracking-widest text-blue-600">
-              Student Score
+              Student Score ({stats.studentWordCount} words)
             </div>
             <div className="text-5xl sm:text-6xl font-black text-blue-900 font-mono mt-1">
               {stats.studentScore}
@@ -106,12 +106,16 @@ ${wordHistory
 
           <div className="text-center">
             <div className="text-xs uppercase font-extrabold tracking-widest text-indigo-600">
-              AI Score
+              AI Score ({stats.aiWordCount} words)
             </div>
             <div className="text-5xl sm:text-6xl font-black text-indigo-900 font-mono mt-1">
               {stats.aiScore}
             </div>
           </div>
+        </div>
+
+        <div className="mt-4 px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 font-medium max-w-lg text-center">
+          ⚖️ <strong className="font-bold text-slate-800">Fair Point System:</strong> Each valid science word awarded +20 pts equally to both Student and AI (based on word count, not typing speed).
         </div>
 
         {/* Prominent PDF Download Button in Hero Header */}

@@ -361,7 +361,8 @@ export default function App() {
       // Valid word entered! Reset strikes to 0
       setStrikes(0);
 
-      // Add student word to history
+      // Add student word to history (Fair Count-Based Point System: 20 pts per valid word)
+      const FAIR_POINTS_PER_WORD = 20;
       const studentWordNormalized = data.studentValidation.normalizedWord || word;
       const studentEtymology =
         data.studentValidation.etymology && data.studentValidation.etymology.trim()
@@ -376,13 +377,13 @@ export default function App() {
         definition: data.studentValidation.definition || "Science term.",
         etymology: studentEtymology,
         isValid: true,
-        score: data.studentValidation.score || 15,
+        score: FAIR_POINTS_PER_WORD,
         timestamp: Date.now(),
         matchedBingoTileId: data.studentValidation.matchedBingoTileId,
       };
 
       setWordHistory((prev) => [...prev, studentEntry]);
-      setStudentScore((prev) => prev + studentEntry.score);
+      setStudentScore((prev) => prev + FAIR_POINTS_PER_WORD);
 
       // Claim Bingo Tile if matched
       let updatedTiles = [...bingoTiles];
@@ -434,6 +435,7 @@ export default function App() {
         ? latestAiTurnData.etymology
         : getEtymologyFallback(latestAiTurnData.word, topic);
 
+    const FAIR_POINTS_PER_WORD = 20;
     const aiEntry: WordEntry = {
       id: `ai-${Date.now()}`,
       word: latestAiTurnData.word,
@@ -443,13 +445,13 @@ export default function App() {
       etymology: aiEtymology,
       funFact: latestAiTurnData.funFact,
       isValid: true,
-      score: latestAiTurnData.score || 20,
+      score: FAIR_POINTS_PER_WORD,
       timestamp: Date.now(),
       matchedBingoTileId: latestAiTurnData.matchedBingoTileId,
     };
 
     setWordHistory((prev) => [...prev, aiEntry]);
-    setAiScore((prev) => prev + aiEntry.score);
+    setAiScore((prev) => prev + FAIR_POINTS_PER_WORD);
 
     // Claim Bingo Tile if matched
     const aiWordLower = aiEntry.word.toLowerCase();

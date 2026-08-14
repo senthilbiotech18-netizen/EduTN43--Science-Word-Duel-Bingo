@@ -101,7 +101,7 @@ export const WordBattle: React.FC<WordBattleProps> = ({
     <div className="bg-white border border-blue-100/80 rounded-3xl p-4 sm:p-6 shadow-sm flex flex-col justify-between h-full min-h-[580px]">
       {/* Top Banner Control Bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-blue-100 gap-3">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           <div
             className={`w-3 h-3 rounded-full ${
               isStudentTurn ? "bg-blue-600 animate-ping" : "bg-indigo-600 animate-ping"
@@ -116,6 +116,10 @@ export const WordBattle: React.FC<WordBattleProps> = ({
               <span className="text-indigo-700 font-extrabold">AI Challenger Typing...</span>
             )}
           </h3>
+          <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200" title="Score is count-based: both student and AI receive exactly 20 points per valid word, not based on speed">
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+            Fair Points: 20 pts / Word
+          </span>
         </div>
 
         <div className="flex items-center gap-2">
@@ -173,7 +177,7 @@ export const WordBattle: React.FC<WordBattleProps> = ({
                   Student Deck
                 </h4>
                 <p className="text-[10px] text-blue-700 font-medium">
-                  Words typed: {studentWords.length}
+                  {studentWords.length} {studentWords.length === 1 ? "word" : "words"} • 20 pts each
                 </p>
               </div>
             </div>
@@ -295,7 +299,7 @@ export const WordBattle: React.FC<WordBattleProps> = ({
                   AI Challenger Deck
                 </h4>
                 <p className="text-[10px] text-indigo-700 font-medium">
-                  Words typed: {aiWords.length}
+                  {aiWords.length} {aiWords.length === 1 ? "word" : "words"} • 20 pts each
                 </p>
               </div>
             </div>

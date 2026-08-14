@@ -151,7 +151,7 @@ STRICT TOPIC ADHERENCE MANDATE:
    - Validate if "${normalizedInput}" is a real, legitimate scientific term STRICTLY relevant to "${topic}".
    - If "${normalizedInput}" is completely unrelated to "${topic}" (e.g., typing "Astronomy" when the topic is "Cell Biology", or typing "Computer" when the topic is "Reproduction in Plants"), mark isValid = false with a clear reason explaining why "${normalizedInput}" does not belong to "${topic}".
    - Check if it was already used in [${usedWordsStr}]. If already used, mark isValid = false with reason "Already used in this match!".
-   - If valid, assign a score (10 for basic, 20 for intermediate, 30 for advanced terminology), concise 1-sentence definition, AND mandatory etymology / word origin (e.g., "From Greek 'pollen' (fine flour)"), plus matchedBingoTileId if applicable.
+   - FAIR COUNT-BASED POINT SYSTEM: If valid, ALWAYS assign EXACTLY 20 points (score = 20) for any valid scientific term. Do not alter score based on speed or length. Provide concise 1-sentence definition, AND mandatory etymology / word origin (e.g., "From Greek 'pollen' (fine flour)"), plus matchedBingoTileId if applicable.
 
 2. AI COUNTER WORD GENERATION (CRITICAL REQUIREMENT):
    - ABSOLUTE MANDATE: The AI MUST choose a word or term that is 100% STRICTLY AND DIRECTLY RELATED TO THE TARGET TOPIC "${topic}".
@@ -162,9 +162,10 @@ STRICT TOPIC ADHERENCE MANDATE:
      * If Topic is "Cell Biology & Organelles", AI words MUST be cell biology terms.
      * If Topic is "Genetics & DNA", AI words MUST be genetics terms.
    - The AI word MUST NOT be in [${usedWordsStr}] and MUST NOT be "${normalizedInput}".
-   - Provide the AI word, concise 1-sentence definition, mandatory etymology / word origin, fascinating 1-sentence fun fact, score (10-30), and matchedBingoTileId if applicable.
+   - FAIR POINT SYSTEM: The AI word ALWAYS receives EXACTLY 20 points (score = 20), matching the student's point award for 1 valid word.
+   - Provide the AI word, concise 1-sentence definition, mandatory etymology / word origin, fascinating 1-sentence fun fact, score = 20, and matchedBingoTileId if applicable.
 
-CRITICAL: Both 'etymology' fields MUST be provided for both words. The AI counter word MUST be 100% strictly on topic for "${topic}".
+CRITICAL: Both 'etymology' fields MUST be provided for both words. Both scores MUST equal 20 for fair count-based point equality. The AI counter word MUST be 100% strictly on topic for "${topic}".
 
 Return strictly JSON conforming to the schema.`;
 
@@ -261,13 +262,7 @@ Return strictly JSON conforming to the schema.`;
       });
     }
 
-    const studentScore = matchedDictWord
-      ? matchedDictWord.score
-      : lowerInput.length >= 10
-      ? 30
-      : lowerInput.length >= 6
-      ? 20
-      : 10;
+    const studentScore = 20;
 
     const studentDef = matchedDictWord
       ? matchedDictWord.definition
